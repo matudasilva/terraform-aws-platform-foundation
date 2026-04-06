@@ -5,7 +5,7 @@ This project demonstrates a production-style Infrastructure as Code setup using 
 
 ## Features
 - Remote state in S3
-- State locking via DynamoDB
+- State locking via use_lockfile = true
 - Multi-environment structure (dev/prod)
 - Reusable modules
 - GitHub Actions CI/CD
