@@ -16,4 +16,5 @@ tfplan
 .terraform.tfstate.lock.info
 terraform.rc
 .terraformrc
-*~
+*~.codex
+.codex
