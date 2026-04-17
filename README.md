@@ -20,7 +20,7 @@ This project demonstrates a production-style Infrastructure as Code setup using 
 
 ## Usage
 
-cd envs/dev
+cd envs/dev/foundation
 terraform init
 terraform plan
 terraform apply
