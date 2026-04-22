@@ -16,3 +16,21 @@ variable "tags" {
     Project     = "terraform-aws-platform-foundation"
   }
 }
+
+variable "github_repository" {
+  description = "GitHub repository in owner/repo format allowed to assume the OIDC role"
+  type        = string
+  default     = "matudasilva/terraform-aws-platform-foundation"
+}
+
+variable "allowed_branches" {
+  description = "Git branches allowed to assume the OIDC role"
+  type        = list(string)
+  default     = ["main", "develop"]
+}
+
+variable "oidc_audience" {
+  description = "OIDC audience expected by AWS STS"
+  type        = string
+  default     = "sts.amazonaws.com"
+}

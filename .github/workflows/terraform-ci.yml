@@ -22,6 +22,13 @@ jobs:
   terraform:
     name: Terraform Validation
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write
+
+    env:
+      TF_BUCKET_NAME_DEV: ${{ vars.TF_BUCKET_NAME_DEV }}
 
     steps:
       - name: Checkout code
@@ -30,15 +37,41 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.5.7
+          terraform_version: 1.10.5
 
       - name: Terraform Format Check
         run: terraform fmt -check -recursive
 
+      - name: Prepare CI Workspace
+        run: |
+          rm -rf /tmp/foundation-ci
+          mkdir -p /tmp/foundation-ci/envs/dev
+          cp -R envs/dev/foundation /tmp/foundation-ci/envs/dev/foundation
+          cp -R modules /tmp/foundation-ci/modules
+          rm -f /tmp/foundation-ci/envs/dev/foundation/backend.tf
+
       - name: Terraform Init
-        working-directory: envs/dev/foundation
+        working-directory: /tmp/foundation-ci/envs/dev/foundation
         run: terraform init -backend=false -input=false -no-color
 
       - name: Terraform Validate
-        working-directory: envs/dev/foundation
+        working-directory: /tmp/foundation-ci/envs/dev/foundation
         run: terraform validate -no-color
+
+      - name: Configure AWS credentials (OIDC)
+        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Terraform Plan
+        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+        working-directory: /tmp/foundation-ci/envs/dev/foundation
+        run: |
+          terraform plan \
+            -input=false \
+            -no-color \
+            -refresh=false \
+            -lock=false \
+            -var="bucket_name=${TF_BUCKET_NAME_DEV:-tf-platform-foundation-ci-dev-placeholder}"
