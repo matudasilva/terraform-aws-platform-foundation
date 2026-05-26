@@ -11,12 +11,12 @@ variable "bucket_name" {
 variable "tags" {
   type = map(string)
   default = {
-    project      = "terraform-aws-platform-foundation"
-    environment  = "dev"
-    managed_by   = "terraform"
-    owner        = "matias"
-    component    = "foundation"
-    repository   = "terraform-aws-platform-foundation"
+    project     = "terraform-aws-platform-foundation"
+    environment = "prod"
+    managed_by  = "terraform"
+    owner       = "matias"
+    component   = "foundation"
+    repository  = "terraform-aws-platform-foundation"
   }
 }
 
@@ -29,7 +29,7 @@ variable "github_repository" {
 variable "allowed_branches" {
   description = "Git branches allowed to assume the OIDC role"
   type        = list(string)
-  default     = ["main", "develop"]
+  default     = ["main"]
 }
 
 variable "oidc_audience" {

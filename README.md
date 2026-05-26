@@ -5,6 +5,7 @@ This project demonstrates a production-style Infrastructure as Code setup using 
 
 ## Requirements
 - Terraform CLI >= 1.10.0
+  - Local `terraform init` requires Terraform 1.10+ because the S3 backend uses `use_lockfile = true` in `backend.tf`
 
 ## Features
 - Remote state in S3
