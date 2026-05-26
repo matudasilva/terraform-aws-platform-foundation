@@ -27,10 +27,12 @@ La visibilidad del repositorio no define la política de artefactos del framewor
 
 ## Estado actual
 
-- ORQ activa: ORQ-001 (Governance Baseline v1 alignment)
-- Status: Execution Review completa, pendiente Closure
+- ORQ activa: (Ninguna)
+- ORQ cerrada: ORQ-001 (Governance Baseline v1 alignment) ✅ CLOSED 2026-05-26
+- Status: Ejecución completada, Execution Review passed, Closure completado
 - ORQ location: `.framework/orq/ORQ-001-governance-baseline-v1/`
-- Readiness: Ready for closure
+- Resultado: 5/5 tasks completadas, Learning Payload preparado
+- Próximo paso: ORQ-002 (Nuevos módulos) o ORQ-003 (CI/CD gates)
 
 ## Restricciones
 

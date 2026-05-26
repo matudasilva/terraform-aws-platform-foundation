@@ -19,3 +19,23 @@ terraform.rc
 *~.codex
 .codex
 .claude/ 
+
+# AI Together Framework - local tooling and operational memory
+.framework/prompts/
+.framework/output-contracts/
+.framework/cache/
+.framework/tmp/
+.framework/runtime/
+.framework/logs/
+.framework/local/
+.framework/orq/
+.framework/ORQ-*/
+.framework/task-results/
+.framework/audits/
+.framework/working-notes/
+.framework/*.local.md
+.framework/*.local.yml
+.framework/*.local.json
+.claude/commands/
+.claude/settings.local.json
+.codex/

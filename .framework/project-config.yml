@@ -1,0 +1,17 @@
+framework: AI Together Framework V2
+repo_visibility: private
+artifact_policy: hybrid
+operational_memory_location: local-ignored
+orq_language: unset
+local_tooling_enabled: true
+versioned_contract:
+  - .framework/context.md
+  - .framework/framework-reference.md
+  - .framework/project-config.yml
+  - .framework/framework-version
+public_source_boundary: product source and public docs only unless explicitly approved
+install_mode: hybrid
+visibility: private
+profile: full
+mode: existing
+framework_repo: external
