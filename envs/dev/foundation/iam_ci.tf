@@ -84,6 +84,15 @@ resource "aws_iam_role_policy" "ci_terraform_plan_policy" {
           "kms:ListResourceTags"
         ]
         Resource = "*"
+      },
+      {
+        Sid    = "AllowOidcProviderRead"
+        Effect = "Allow"
+        Action = [
+          "iam:ListOpenIDConnectProviders",
+          "iam:GetOpenIDConnectProvider"
+        ]
+        Resource = "*"
       }
     ]
   })
