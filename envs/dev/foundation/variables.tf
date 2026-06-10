@@ -11,12 +11,12 @@ variable "bucket_name" {
 variable "tags" {
   type = map(string)
   default = {
-    project      = "terraform-aws-platform-foundation"
-    environment  = "dev"
-    managed_by   = "terraform"
-    owner        = "matias"
-    component    = "foundation"
-    repository   = "terraform-aws-platform-foundation"
+    project     = "terraform-aws-platform-foundation"
+    environment = "dev"
+    managed_by  = "terraform"
+    owner       = "matias"
+    component   = "foundation"
+    repository  = "terraform-aws-platform-foundation"
   }
 }
 
