@@ -7,5 +7,5 @@ output "bucket_arn" {
 }
 
 output "github_actions_role_arn" {
-  value = aws_iam_role.github_actions_ci_plan.arn
+  value = aws_iam_role.ci_terraform_plan.arn
 }
