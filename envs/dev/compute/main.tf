@@ -60,7 +60,7 @@ resource "aws_security_group" "ec2" {
 
 resource "aws_instance" "this" {
   ami                    = data.aws_ami.amazon_linux_2023.id
-  instance_type          = "t2.micro"
+  instance_type          = var.instance_type
   subnet_id              = data.terraform_remote_state.network.outputs.private_subnet_ids[0]
   iam_instance_profile   = module.ec2_role.instance_profile_name
   vpc_security_group_ids = [aws_security_group.ec2.id]
