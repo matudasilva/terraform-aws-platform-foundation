@@ -39,3 +39,6 @@ terraform.rc
 .claude/commands/
 .claude/settings.local.json
 .codex/
+
+# IA Juntas framework — local only
+.framework/
