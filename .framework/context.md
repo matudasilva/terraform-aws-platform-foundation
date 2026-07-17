@@ -28,11 +28,14 @@ La visibilidad del repositorio no define la política de artefactos del framewor
 ## Estado actual
 
 - ORQ activa: (Ninguna)
+- ORQ cerrada: ORQ-003 (OIDC Provider setup para GitHub Actions) ✅ CLOSED 2026-06-10
 - ORQ cerrada: ORQ-001 (Governance Baseline v1 alignment) ✅ CLOSED 2026-05-26
 - Status: Ejecución completada, Execution Review passed, Closure completado
 - ORQ location: `.framework/orq/ORQ-001-governance-baseline-v1/`
 - Resultado: 5/5 tasks completadas, Learning Payload preparado
-- Próximo paso: ORQ-002 (Nuevos módulos) o ORQ-003 (CI/CD gates)
+- ORQ-002 location: `.framework/orq/ORQ-002-backend-key-dev-migration/`
+- ORQ-003 location: `.framework/orq/ORQ-003-oidc-provider-ci-role/`
+- Próximo paso: definir siguiente ORQ
 
 ## Restricciones
 
