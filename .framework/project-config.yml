@@ -1,17 +1,38 @@
-framework: AI Together Framework V2
+framework: AI Together Framework V3
+framework_version: v3
 repo_visibility: private
 artifact_policy: hybrid
 operational_memory_location: local-ignored
-orq_language: unset
+orq_language: en
+max_concurrent_orqs: 2
+extensions:
+  approval_channel:
+    enabled: false
+    provider: unset
+  risk_policy:
+    enabled: false
+    path: .framework/risk-policy.yml
+  external_reviewer:
+    enabled: false
+    strategy: prefer-cross-provider
+    fallback: native
+    max_automatic_rounds: 3
+    extra_round_policy: operator-approval
+    hard_max_rounds: 5
+    require_read_only: true
 local_tooling_enabled: true
 versioned_contract:
-  - .framework/context.md
-  - .framework/framework-reference.md
+  - .framework/constitution/mission.md
+  - .framework/constitution/tech-stack.md
+  - .framework/constitution/roadmap.md
+  - .framework/constitution/diagrams/INDEX.md
+  - .framework/constitution/diagrams/context.svg
+  - .framework/constitution/diagrams/architecture.svg
+  - .framework/templates/learnings.md
   - .framework/project-config.yml
   - .framework/framework-version
 public_source_boundary: product source and public docs only unless explicitly approved
 install_mode: hybrid
 visibility: private
-profile: full
 mode: existing
 framework_repo: external

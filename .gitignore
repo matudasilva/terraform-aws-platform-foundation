@@ -21,7 +21,7 @@ terraform.rc
 .terraformrc
 *~.codex
 .codex
-.claude/ 
+.claude/hooks/
 
 # AI Together Framework - local tooling and operational memory
 .framework/prompts/
@@ -43,9 +43,19 @@ terraform.rc
 .claude/settings.local.json
 .codex/
 
-# IA Juntas framework — local only
-.framework/
-.framework/*
-
 # Lab local
 lab/
+.framework/local-state/
+.framework/v3-upgrade-backups/
+.framework/orqs/
+.framework/orqs-v2/
+.framework/local-tools/
+.framework/governance.db
+.framework/constitution/.pending-init
+.framework/constitution/diagrams/*.candidate.svg
+.framework/constitution/diagrams/*.candidate.base
+.claude/skills/
+
+# AI Together Framework - migrate-mode carryover (ORQ-13)
+.framework/v2-legacy/
+.framework/v2-markers-backup/
